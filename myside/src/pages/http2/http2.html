@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Sheets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+  <ion-list>
+
+  <form class="form-inline">
+	 <ion-item>
+    <ion-label>search2</ion-label>
+    <ion-input type="search"#search></ion-input>
+  </ion-item>
+	
+	<button ion-button block (click)="doSearch(search.value)">
+    Show Action Sheet
+  </button>
+</form>
+
+</ion-list>
+
+  <div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<ul class="list-group">
+	<li class="list-group-item"
+	    *ngFor="let track of itunes.results">
+		<img src="{{track.thumbnail}}">
+		<a target="_blank"
+		   href="{{track.link}}">{{ track.track }}
+		</a>
+	</li>
+</ul>
+
+</ion-content>

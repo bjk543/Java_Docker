@@ -1,0 +1,37 @@
+.action-sheets-basic-page {
+  .ion-md-share {
+    color: #ED4248;
+  }
+  .ion-md-arrow-dropright-circle {
+    color: #508AE4;
+  }
+  .ion-md-heart-outline {
+    color: #31D55F;
+  }
+  .action-sheet-cancel ion-icon,
+  .action-sheet-destructive ion-icon {
+    color: #757575;
+  }
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  .text-input::-moz-placeholder {
+    color: white;
+  }
+  .text-input:-ms-input-placeholder {
+    color: white;
+  }
+  .text-input::-webkit-input-placeholder {
+    text-indent: 0;
+    color: white;
+  }
+  .item-input::textarea {
+    height: 370px;
+    padding: 20px;
+    color: #31D55F;
+  }
+}

@@ -1,0 +1,27 @@
+version: "3"
+services:
+  mongo-api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: express
+    volumes:
+      - ./:/app
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+    networks:
+      - webnet
+    external_links:
+      - mongodb_mongo_db_1
+    environment:
+      - MONGO_URL=mongodb://mongo-db:27017/app_development
+      - EXPRESS_PORT=8096
+    ports:
+      - 8096:8096
+networks:
+  webnet:
+    external: true

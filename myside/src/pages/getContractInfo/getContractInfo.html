@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Sheets 1</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+
+    <form class="form-inline">
+      <ion-item>
+        <ion-label>search2</ion-label>
+        <ion-input type="search" #search></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>solName</ion-label>
+        <ion-input type="solName" #solName></ion-input>
+      </ion-item>
+
+      <!--<ion-item>
+        <ion-label>solidity</ion-label>
+        <ion-input type="solidity" #solidity></ion-input>
+      </ion-item>-->
+
+      <button ion-button block (click)="doSearch(search.value,solName.value,'0')">
+    Show Action Sheet
+      </button>
+    </form>
+
+  </ion-list>
+
+
+
+  <div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+  </div>
+
+  <ul class="list-group">
+
+    <ion-item>
+      <ion-label>HTTP status</ion-label>
+    </ion-item>
+    <ion-item> {{ itunes.status }} </ion-item>
+    <ion-item> {{ itunes.response }} </ion-item>
+
+
+    <li class="list-group-item" *ngFor="let track2 of itunes.results">
+
+
+      <ion-item>
+        <ion-label>HTTP solCode</ion-label>
+      </ion-item>
+      <ion-item> {{ track2.solCode }} </ion-item>
+
+
+      <ion-item>
+        <ion-label>isEnd</ion-label>
+      </ion-item>
+      <ion-item> {{ track2.isEnd }} </ion-item>
+
+
+      <ion-item>
+        <ion-label>counter</ion-label>
+      </ion-item>
+      <ion-item> {{ track2.counter }} </ion-item>
+
+
+      <ion-item>
+        <ion-label>counterAll</ion-label>
+      </ion-item>
+      <ion-item> {{ track2.counterAll }} </ion-item>
+      <table>
+        <thead>
+          <th>addresses</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.addresses">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <th>answers</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.answers">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <th>amounts</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.amounts">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <th>withdrawAmount</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.withdrawAmount">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <th>addressesAll</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.addressesAll">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <th>amountsAll</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.amountsAll">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <th>answersAll</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track3 of track2.answersAll">
+            <td>{{track3}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+    </li>
+  </ul>
+
+</ion-content>

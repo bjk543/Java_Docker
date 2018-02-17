@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Sheets 0.4</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-list>
+
+    <ion-item>
+      <ion-select #selectCurrencyInput okText="ok" cancelText="cancel">
+        <ion-option value="genWallet" >genWallet</ion-option>     
+        <ion-option value="getBalance" >getBalance</ion-option>       
+        <ion-option value="solCompiler" >solCompiler</ion-option>
+        <ion-option value="sha3" >sha3</ion-option>
+        <ion-option value="addParameterInt" >addParameterInt</ion-option>
+        <ion-option value="addParameterAddress" >addParameterAddress</ion-option>
+        
+      </ion-select>
+
+    </ion-item>
+
+    <form class="form-inline">
+      <ion-item>
+        <ion-label>address</ion-label>
+        <ion-input type="search" #address></ion-input>
+      </ion-item>
+
+      <button ion-button block (click)="doSearch(selectCurrencyInput.value,address.value)">
+    Show Action Sheet
+      </button>
+    </form>
+
+  </ion-list>
+
+
+
+  <div class="text-center">
+    <p class="lead" *ngIf="loading">Loading...</p>
+  </div>
+
+  <ul class="list-group">
+
+    <ion-item>
+      <ion-label>HTTP status</ion-label>
+    </ion-item>
+    <ion-item> {{ itunes.status }} </ion-item>
+
+    <li class="list-group-item" *ngFor="let track2 of itunes.results">
+
+
+      <ion-item>
+        <ion-label>balance</ion-label>
+      </ion-item>
+      <ion-item> {{ track2.balance }} </ion-item>
+      <ion-item> {{ track2.solCode }} </ion-item>
+      <ion-item> {{ track2.solInterface }} </ion-item>
+      <ion-item> {{ track2.privateKey }} </ion-item>
+      <ion-item> {{ track2.address }} </ion-item>
+    </li>
+  </ul>
+
+</ion-content>

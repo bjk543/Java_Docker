@@ -1,0 +1,1 @@
+docker run --name ethereum-node6 -v ~/ethereum6:/root    -p 8546:8545 -p 30306:30303    eth5  --mine --minerthreads=1 --rpcapi personal,db,eth,net,web3 --rpc --rpcaddr '172.17.0.3' --rpccorsdomain '*' --rpcport 8545 --networkid='12345' --fast --cache=512 --nodiscover

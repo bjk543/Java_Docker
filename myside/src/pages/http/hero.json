@@ -1,0 +1,11 @@
+[
+        {
+            "name": "antimage",
+            "id": 1,
+            "localized_name": "Anti-Mage"
+        },
+        {
+            "name": "axe",
+            "id": 2,
+            "localized_name": "Axe"
+        }]

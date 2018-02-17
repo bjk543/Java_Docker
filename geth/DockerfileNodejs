@@ -1,0 +1,24 @@
+# Use an official Python runtime as a parent image
+FROM bjk543/eth
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+# Make port 80 available to the world outside this container
+EXPOSE 8545
+EXPOSE 30303
+
+# Define environment variable
+ENV NAME World
+
+RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get autoremove
+RUN add-apt-repository -y ppa:chris-lea/node.js
+RUN apt-get update
+RUN apt-get -y install nodejs
+
+CMD ["sh", "run.sh"]

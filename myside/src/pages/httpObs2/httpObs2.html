@@ -1,0 +1,90 @@
+<form class="form-inline">
+  <div class="form-group">
+    <input type="search"
+           class="form-control"
+           placeholder="Enter search string"
+           [formControl]="searchField">
+  </div>
+</form>
+
+<div class="text-center">
+  <p class="lead" *ngIf="loading">Loading...</p>
+</div>
+
+<ul class="list-group">
+  
+  <div *ngFor="let track of results | async"
+          class="search-result" >
+      {{track.transHash}}
+    </div>
+
+</ul>
+
+
+<ion-content>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+  
+
+<div class="form-group">
+    <input type="search"
+           class="form-control"
+           placeholder="Enter search string"
+           [formControl]="searchField">
+  </div>
+  <div>
+    <div *ngFor="let track of results | async"
+          class="search-result" >
+      
+      <ion-item>
+        <ion-label>hash</ion-label>
+      </ion-item>
+      <ion-item> {{ track.hash }} </ion-item>
+      <ion-item>
+        <ion-label>blockNumber</ion-label>
+        <div item-content>{{ track.blockNumber }}</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>blockHash</ion-label>
+      </ion-item>
+      <ion-item> {{ track.blockHash }} </ion-item>
+      <ion-item>from</ion-item>
+      <ion-item>{{ track.from }}</ion-item>
+      <ion-item>to</ion-item>
+      <ion-item>{{ track.to }}</ion-item>
+
+      <ion-item>
+        <ion-label>value</ion-label>
+      </ion-item>
+      <ion-item> {{ track.value }} </ion-item>
+
+
+      <ion-item>
+        <ion-label>gas</ion-label>
+        <div item-content>{{ track.gas }}</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>gasPrice</ion-label>
+        <div item-content>{{ track.gasPrice }}</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>nonce</ion-label>
+        <div item-content>{{ track.nonce }}</div>
+      </ion-item>
+      <ion-item>
+        <ion-label>transactionIndex</ion-label>
+        <div item-content>{{ track.transactionIndex }}</div>
+      </ion-item>
+
+      <ion-item>input</ion-item>
+      <ion-item>
+        <label class="item item-input item-stacked-label">	
+           <!--<textarea placeholder="yyy" rows="8" cols="30">-->
+	        <textarea placeholder="yyy">    {{ track.input }}
+	        </textarea></label>
+      </ion-item>
+
+    </div>
+  </div>
+
+
+</ion-content>

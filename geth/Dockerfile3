@@ -1,0 +1,24 @@
+# Use an official Python runtime as a parent image
+#FROM bjk543/eth
+FROM ethereum/client-go
+
+
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+ADD . /app
+
+RUN geth init genesis.json
+
+# Make port 80 available to the world outside this container
+EXPOSE 8545
+EXPOSE 30303
+
+# Define environment variable
+ENV NAME World
+
+#ENTRYPOINT [/app/run.sh]
+#CMD ["cp","-f", "root/.ethereum/keystore/*","/root/.ethereum/keystore/"]
+#CMD ["sh", "run.sh"]
+#cp -f root/.ethereum/keystore/* /root/.ethereum/keystore/

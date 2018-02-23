@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json /app
 RUN npm install
 COPY . /app
-EXPOSE 8093
+EXPOSE 8094
 CMD [ \
   "./wait-for-it.sh", \
   "mongo_db:27017", \

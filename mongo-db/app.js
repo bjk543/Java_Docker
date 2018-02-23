@@ -12,15 +12,15 @@ var port = process.env.EXPRESS_PORT;
 console.log("port is "+port);
 
 
-app.get('/', function(req, res){
- res.send("Hello World-changed-1 ");
-});
+
 app.listen(8094, function(){
  console.log('Example app listening on port 8094!!');
 });
 
 
-
+app.get('/', function(req, res){
+  res.send("Hello World-changed-1 ");
+ });
 var findOne = function (para, callback) {
   console.log('findOne para %j', para);
   MongoClient.connect(url, function (err, db) {
@@ -80,7 +80,7 @@ var upsertDocument = function (para, callback) {
       });
   })
 }
-app.get('/upsertDocument/:table/:kv/:update1/', function (req, res) {
+app.post('/upsertDocument/:table/:kv/:update1/', function (req, res) {
 
   var kv = req.params.kv;
   var kTable = req.params.table;

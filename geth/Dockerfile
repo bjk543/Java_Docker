@@ -19,7 +19,5 @@ EXPOSE 30303
 ENV NAME World
 
 #ENTRYPOINT [/user/bin/geth]
-#CMD ["cp","-f", "root/.ethereum/keystore/*","/root/.ethereum/keystore/"]
 CMD ["sh", "run.sh"]
 #CMD ["geth","--mine","--minerthreads=1","--rpcapi","personal,db,eth,net,web3","--rpc","--rpcaddr","0.0.0.0","--rpccorsdomain","*","--rpcport","8545","--networkid=12345","--fast","--cache=512","--nodiscover"]
-#cp -f root/.ethereum/keystore/* /root/.ethereum/keystore/

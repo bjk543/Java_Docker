@@ -1,3 +1,8 @@
+#compose 
+docker-compose -f docker-compose.yml up --build
+docker-compose -f docker-compose.yml up --build -d
+
+
 # build this dockerFile
 docker build -t eth5 .
 
@@ -8,9 +13,9 @@ docker rm -f ethereum-node
 # run this container.
 
 #add keystore
+sudo cp  .ethereum/keystore/UTC--2016-12-21T08-18-15.996092664Z--133b44fd34f9a69dcd9d84166443941917dd8110 /root/.ethereum/keystore/
+sudo cp  .ethereum/keystore/key /root/.ethereum/keystore/
 
-#compose 
-docker-compose -f docker-compose.yml up --build
 
 
 #run container

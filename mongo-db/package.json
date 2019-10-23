@@ -20,7 +20,7 @@
     "link-list": "0.0.4",
     "linked-list": "^1.0.3",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.12.3",
+    "mongoose": "^5.7.5",
     "singly-linked-list": "^0.2.7",
     "superagent": "^3.7.0",
     "symbol-tree": "^3.2.2",

@@ -18,7 +18,7 @@
     "express": "^4.16.2",
     "link-list": "0.0.4",
     "linked-list": "^1.0.3",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^2.6.1",
     "singly-linked-list": "^0.2.7",
     "symbol-tree": "^3.2.2"
   },
